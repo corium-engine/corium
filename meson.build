@@ -1,0 +1,24 @@
+project(
+    'corium',
+    'cpp',
+    version : '1.0.0',
+    license : 'GPLv3',
+    default_options : [
+        'buildtype=release',
+        'default_library=shared',
+        'optimization=3',
+        'b_lto=false',
+    ]
+)
+
+cppflags = ''
+inc = include_directories('src/include')
+
+# Dependencies
+opengl = dependency('opengl')
+vulkan = dependency('vulkan')
+
+library( 
+    'corium',
+    dependencies : [opengl, vulkan] 
+)
