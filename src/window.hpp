@@ -22,17 +22,17 @@ namespace corium
         int positionX;
         int positionY;
 
-        GLFWimage windowIcon;
+        GLFWmonitor *monitor;
+        const GLFWvidmode *mode;
+        const GLFWimage *icon;
 
     public:
         std::string windowTitle;
         GLFWwindow *window;
-        GLFWmonitor *monitor;
-        const GLFWvidmode *mode;
 
         //void setWindowSize(int, int);
         void setWindowSizeLimits(int, int, int, int); // Setter for max-/minWidth and max-/minHeight
-        void setWindowIcon(std::string);              // Setter for window icon
+        void setWindowIcon(int, GLFWimage *);         // Setter for window icon
         void makeContextCurrent();                    // Make window context current
 
         Window(int, int, std::string, bool);

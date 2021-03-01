@@ -40,8 +40,13 @@ void Window::setWindowSizeLimits(int minWidth, int maxWidth, int minHeight, int 
     glfwSetWindowSizeLimits(window, minWidth, minHeight, maxWidth, maxHeight);
 }
 
-void Window::setWindowIcon(string iconPath)
+void Window::setWindowIcon(int count, GLFWimage *icon_)
 {
+    if (icon_ != nullptr)
+    {
+        icon = icon_;
+        glfwSetWindowIcon(window, 1, icon_);
+    }
 }
 
 void Window::makeContextCurrent()
