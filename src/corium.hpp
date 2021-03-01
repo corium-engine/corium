@@ -10,6 +10,7 @@ namespace corium
     public:
         int initialize();
         void terminate();
+        void errorCallback(int, const char*);
     };
 }
 

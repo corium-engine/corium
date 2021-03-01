@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <GLFW/glfw3.h>
 
 #include "corium.hpp"
@@ -12,4 +13,9 @@ int Core::initialize()
 void Core::terminate()
 {
     glfwTerminate();
+}
+
+void Core::errorCallback(int error, const char* description)
+{
+    fprintf(stderr, "Error: %s\n", description);
 }
