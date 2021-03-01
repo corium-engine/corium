@@ -33,12 +33,24 @@ namespace corium
         {
             glfwMakeContextCurrent(window);
         };
+        void destroyWindow()
+        {
+            glfwDestroyWindow(window);
+        };
 
         // Instance manipulation
         void setWindowSize(int width_, int height_) // Setter for window height and widths
         {
             height = height_;
             width = width_;
+        };
+        void setFrambufferSizeCallback(GLFWframebuffersizefun callback)
+        {
+            glfwSetFramebufferSizeCallback(window, callback);
+        };
+        void setWindowCloseCallback(GLFWwindowclosefun callback)
+        {
+            glfwSetWindowCloseCallback(window, callback);
         };
         void setWindowIcon(GLFWimage *icon) // Setter for window icon
         {
