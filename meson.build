@@ -11,14 +11,13 @@ project(
     ]
 )
 
-cppflags = ''
-inc = include_directories('src/include')
+cxxflags = ''
 
 # Dependencies
 opengl = dependency('opengl')
-vulkan = dependency('vulkan')
+glfw = dependency('glfw')
 
 library( 
     'corium',
-    dependencies : [opengl, vulkan] 
+    dependencies : [opengl, glfw] 
 )
