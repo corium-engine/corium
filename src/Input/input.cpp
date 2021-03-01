@@ -7,19 +7,7 @@
 using namespace std;
 using namespace corium;
 
-Input::Input() 
+void Keyboard::setKeyCallback(GLFWwindow *window, GLFWkeyfun callback)
 {
-
-}
-
-Keyboard::Keyboard()
-{
-    int keyCallback = glfwSetKeyCallback(window, key_callback);
-    // Key States: GLFW_KEY_<KEYCODE>
-    int state = glfwGetKey(window, GLFW_KEY_E);
-}
-
-Mouse::Mouse() 
-{
-
+    glfwSetKeyCallback(window, callback);
 }

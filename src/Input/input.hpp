@@ -7,18 +7,23 @@ namespace corium
     {
     public:
         Input();
+        ~Input();
     };
 
     class Keyboard
     {
     public:
         Keyboard();
+        ~Keyboard();
+
+        void setKeyCallback(GLFWwindow *, GLFWkeyfun);
     };
 
     class Mouse
     {
     public:
         Mouse();
+        ~Mouse();
     };
 }
 

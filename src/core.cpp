@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <GLFW/glfw3.h>
 
-#include "corium.hpp"
+#include "core.hpp"
 
 using namespace corium;
 
@@ -15,7 +15,7 @@ void Core::terminate()
     glfwTerminate();
 }
 
-void Core::errorCallback(int error, const char* description)
+void Core::setErrorCallback(GLFWerrorfun FuncErrorCallback)
 {
-    fprintf(stderr, "Error: %s\n", description);
+    glfwSetErrorCallback(FuncErrorCallback);
 }

@@ -23,6 +23,9 @@ namespace corium
         std::string windowTitle;
 
     public:
+        Window();
+        ~Window();
+
         GLFWwindow *window;
         GLFWmonitor *monitor;
         const GLFWvidmode *mode;

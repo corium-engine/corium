@@ -1,16 +1,17 @@
 #ifndef CORIUM_H
 #define CORIUM_H
 
-#include <GLFW/glfw3.h>
-
 namespace corium
 {
     class Core
     {
     public:
+        Core();
+        ~Core();
+
         int initialize();
         void terminate();
-        void errorCallback(int, const char*);
+        void setErrorCallback(GLFWerrorfun);
     };
 }
 
