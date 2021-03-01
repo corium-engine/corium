@@ -33,3 +33,8 @@ builddir/
 *.exe
 *.out
 *.app
+
+# Editors
+.vscode
+.vs
+.idea
