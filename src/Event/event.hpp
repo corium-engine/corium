@@ -1,8 +1,6 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-#include <GLFW/glfw3.h>
-
 namespace corium
 {
     class Event
