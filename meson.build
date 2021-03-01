@@ -15,7 +15,7 @@ cxxflags = ''
 
 # Dependencies
 opengl = dependency('opengl')
-glfw = dependency('glfw')
+glfw = dependency('glfw3')
 
 library( 
     'corium',
