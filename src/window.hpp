@@ -4,9 +4,6 @@
 #define DEF_WINDOW_HEIGHT 600
 #define DEF_WINDOW_WIDTH 800
 
-#include <GLFW/glfw3.h>
-#include <string>
-
 namespace corium
 {
     class Window
