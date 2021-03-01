@@ -3,13 +3,6 @@
 
 namespace corium
 {
-    class Input
-    {
-    public:
-        Input();
-        ~Input();
-    };
-
     class Keyboard
     {
     public:
@@ -24,6 +17,11 @@ namespace corium
     public:
         Mouse();
         ~Mouse();
+
+        void setCursorPosCallback(GLFWwindow *, GLFWcursorposfun);
+        void inputMode(GLFWwindow *);
+        void Mouse::createCursor(int shape);
+        void Mouse::createCustomCursor(const GLFWimage *, int, int);
     };
 }
 
