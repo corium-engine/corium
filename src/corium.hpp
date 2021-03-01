@@ -1,9 +1,16 @@
 #ifndef CORIUM_H
 #define CORIUM_H
 
-// Main Header file
-// Include all other Header files here
-// #include "include/example.hpp"
+#include <GLFW/glfw3.h>
 
+namespace corium
+{
+    class Core
+    {
+    public:
+        int initialize();
+        void terminate();
+    };
+}
 
 #endif
