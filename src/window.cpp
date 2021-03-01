@@ -5,14 +5,10 @@
 using namespace corium;
 using namespace std;
 
-// Window constructor
-Window::Window(int width_, int height_, string title, bool fullscreen)
+void Window::spawnWindow()
 {
-    // Check if GLFW is initialized
-    if (!glfwInit())
-        exit(-1);
-
-    if (fullscreen)
+    // Handle fullscreen
+    if (isFullscreen)
     {
         // Get primary monitor
         monitor = glfwGetPrimaryMonitor();
@@ -22,39 +18,19 @@ Window::Window(int width_, int height_, string title, bool fullscreen)
         width = mode->width;
         height = mode->height;
     }
-    else if (width_ != NULL && height_ != NULL)
-    {
-        // Use height parameter
-        width = width_;
-        height = height_;
-    }
+
+    // Default values for width and height
+    if (width == NULL)
+        width = DEF_WINDOW_WIDTH;
+    if (height == NULL)
+        height = DEF_WINDOW_HEIGHT;
 
     // Create GLFW window
-    window = glfwCreateWindow(width, height, title.c_str(), monitor, NULL);
+    window = glfwCreateWindow(width, height, windowTitle.c_str(), monitor, NULL);
     if (!window)
         exit(-1);
-}
 
-void Window::setWindowSizeLimits(int minWidth, int maxWidth, int minHeight, int maxHeight)
-{
-    glfwSetWindowSizeLimits(window, minWidth, minHeight, maxWidth, maxHeight);
-}
-
-void Window::setWindowIcon(int count, GLFWimage *icon_)
-{
-    if (icon_ != nullptr)
-    {
-        icon = icon_;
-        glfwSetWindowIcon(window, 1, icon_);
-    }
-}
-
-void Window::makeContextCurrent()
-{
-    glfwMakeContextCurrent(window);
-}
-
-Window::~Window()
-{
-    glfwTerminate();
+    // Set window icon
+    if (windowIcon != nullptr)
+        glfwSetWindowIcon(window, 1, windowIcon);
 }

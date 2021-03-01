@@ -1,6 +1,9 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+#define DEF_WINDOW_HEIGHT 600
+#define DEF_WINDOW_WIDTH 800
+
 #include <GLFW/glfw3.h>
 #include <string>
 
@@ -9,34 +12,42 @@ namespace corium
     class Window
     {
     private:
-        // Window Dimensions
+        // Window dimensions
         int height;
         int width;
 
-        int minWidth;
-        int maxWidth;
-        int minHeight;
-        int maxHeight;
+        bool isFullscreen = false;
 
-        // Window Position
-        int positionX;
-        int positionY;
+        const GLFWimage *windowIcon;
 
-        GLFWmonitor *monitor;
-        const GLFWvidmode *mode;
-        const GLFWimage *icon;
+        std::string windowTitle;
 
     public:
-        std::string windowTitle;
         GLFWwindow *window;
+        GLFWmonitor *monitor;
+        const GLFWvidmode *mode;
 
-        //void setWindowSize(int, int);
-        void setWindowSizeLimits(int, int, int, int); // Setter for max-/minWidth and max-/minHeight
-        void setWindowIcon(int, GLFWimage *);         // Setter for window icon
-        void makeContextCurrent();                    // Make window context current
+        // Window instance creation
+        void spawnWindow();       // Spawn the window instance
+        void makeContextCurrent() // Make window context current
+        {
+            glfwMakeContextCurrent(window);
+        };
 
-        Window(int, int, std::string, bool);
-        ~Window();
+        // Instance manipulation
+        void setWindowSize(int width_, int height_) // Setter for window height and widths
+        {
+            height = height_;
+            width = width_;
+        };
+        void setWindowIcon(GLFWimage *icon) // Setter for window icon
+        {
+            windowIcon = icon;
+        };
+        void setFullscreen() // Make window fullscreen
+        {
+            isFullscreen = true;
+        };
     };
 }
 
