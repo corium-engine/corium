@@ -6,9 +6,6 @@ namespace corium
     class Event
     {
     public:
-        Event();
-        ~Event();
-
         void setFrambufferSizeCallback(GLFWwindow *, GLFWframebuffersizefun);
     };
 }
