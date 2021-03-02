@@ -20,8 +20,8 @@ namespace corium
 
         void setCursorPosCallback(GLFWwindow *, GLFWcursorposfun);
         void inputMode(GLFWwindow *);
-        void Mouse::createCursor(int shape);
-        void Mouse::createCustomCursor(const GLFWimage *, int, int);
+        void createCursor(int shape);
+        void createCustomCursor(const GLFWimage *, int, int);
     };
 }
 
