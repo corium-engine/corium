@@ -10,6 +10,7 @@ workspace "corium"
 
 group "dependencies"
     include "corium/vendor/glad"
+    include "corium/vendor/glfw"
 group ""
 
 include "corium"

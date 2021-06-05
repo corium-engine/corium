@@ -10,12 +10,13 @@ project "corium"
 	files { "src/**.h", "src/**.cpp" }
 
 	includedirs {
-		"src", "vendor/spdlog/include", "%{IncludeDirs.glad}",
+		"src", "vendor/spdlog/include", "%{IncludeDirs.glad}", "%{IncludeDirs.glfw}"
 	}
 
 	links
 	{
 		"glad",
+        "glfw",
 		"opengl32.lib"
 	}
 
