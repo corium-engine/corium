@@ -4,8 +4,8 @@ project "corium"
 	cppdialect "C++17"
 	staticruntime "off"
 
-	pchheader "crpch.h"
-	pchsource "src/crpch.cpp"
+	-- pchheader "crpch.h"
+	-- pchsource "src/crpch.cpp"
 
 	files { "src/**.h", "src/**.cpp" }
 
