@@ -1,4 +1,4 @@
 
 IncludeDirs = {}
-IncludeDirs["glad"] = "%{wks.location}/corium/vendor/glad/include"
-IncludeDirs["glfw"] = "%{wks.location}/corium/vendor/glfw/include"
+IncludeDirs["glad"] = "corium/vendor/glad/include"
+IncludeDirs["glfw"] = "corium/vendor/glfw/include"

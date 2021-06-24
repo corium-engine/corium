@@ -3,7 +3,7 @@ include "dependencies.lua"
 workspace "corium"
     location "build"
     architecture "x86_64"
-    startproject "corium"
+    startproject "sandbox"
 
     configurations { "debug", "release" }
 
@@ -14,3 +14,4 @@ group "dependencies"
 group ""
 
 include "corium"
+include "sandbox"
