@@ -1,3 +1,6 @@
 
-#include "core/base.h"
-#include "core/application.h"
+#include "core/log.h"
+
+/// ENTRY POINT --------------
+#include "core/entry_point.h"
+///
